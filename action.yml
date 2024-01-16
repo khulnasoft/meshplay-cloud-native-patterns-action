@@ -1,0 +1,26 @@
+name: "Service Mesh Pattern Testing with Meshplay"
+description: "Importing Pattern to Meshplay"
+author: "Khulnasoft"
+inputs:
+  # token to authenticate with Meshplay
+  provider_token:
+    description: "Provider token to use. NOTE: value of the 'token' key in auth.json"
+    required: false
+  # platform to deploy Meshplay to
+  platform:
+    description: "Platform to deploy Meshplay to. Allowed values: docker, kubernetes"
+    default: docker
+    required: false
+  pattern_url:
+    description: "URL of the pattern to be deployed"
+    required: false
+  # upload the pattern file to the .github folder and reference its path relative to the folder
+  pattern_file:
+    description: "Name of the pattern file relative to the .github folder"
+    required: false
+runs:
+  using: "node12"
+  main: "main.js"
+branding:
+  icon: 'settings'
+  color: 'purple'
